@@ -1,8 +1,8 @@
-Aroyjung
+Aroymai
 
 Project in Software Development Practice II class
 
-Create Foods-poll web application, using Django web framework and Test Driven Development process
+Create Foods-servey web application, using Django web framework and Test Driven Development process
 
 Reference
 

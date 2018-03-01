@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Aroymai</title>
+    </head>
+    <body>
+        <h1>Aroymai</h1>
+        <form action="/add" method="POST">
+            <table id="id_list_table">
+                <tr>
+                    <th>Foods</th>
+                    {% for food in foods %}
+                        <td>
+                            <center>{{ food }}</center>
+                            <textarea name={{ food }} rows="8" cols="30" id="id_{{ food }}_comment"  placeholder="Enter comment"></textarea><br>
+                            Enter score: <input type="number" name={{ food }} id="id_{{ food }}_score"  min="1" max="5">
+                        </td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Drinks</th>
+                    {% for drink in drinks %}
+                        <td>
+                            <center>{{ drink }}</center>
+                            <textarea name={{ drink }} rows ="8" cols="30" id="id_{{ drink }}_comment" placeholder="Enter comment"></textarea><br> 
+                            Enter score: <input type="number" name={{ drink }} id="id_{{ drink }}_score" min="1" max="5">                   
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Send" id="id_send"></td>
+                </tr>
+            </table>
+            {% csrf_token %}
+        </form>
+    </body>
+</html>
+

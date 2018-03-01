@@ -18,4 +18,6 @@ from poll import views
 
 urlpatterns = [
     path('', views.home_page, name = 'home'),
+    path('fill', views.fill_page, name = 'fill'),
+    path('add', views.add_page, name = 'add'),
 ]
