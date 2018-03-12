@@ -19,4 +19,40 @@ class FillPageTest(TestCase):
         self.assertIn('value2', response.content.decode())
 
 class AddPageTest(TestCase):
-    pass
+
+    def test_saving_and_retrieving_menus(self):
+        first_menu = Menu()
+        first_menu.name = 'GangCurry'
+        first_menu.type = 'Food'
+        first_menu.save()
+
+        second_menu = Menu()
+        second_menu.name = 'GangSom'
+        second_menu.type = 'Food'
+        second_menu.save()
+
+        thrid_menu = Menu()
+        thrid_menu.name = 'KegHuay'
+        thrid_menu.type = 'Drink'
+        thrid_menu.save()
+
+        fourth_menu = Menu()
+        fourth_menu.name = 'NamOi'
+        fourth_menu.type = 'Drink'
+        fourth_menu.save()
+
+        saved_menus = Menu.objects.all()
+        self.assertEqual(saved_menus.count(), 4)
+
+        first_saved_menu = saved_menus[0]
+        second_saved_menu = saved_menus[1]
+        thrid_saved_menu = saved_menus[2]
+        fourth_saved_menu = saved_menus[3]
+        self.assertEqual(first_saved_menu.name, 'GangCurry')
+        self.assertEuqal(first_saved_menu.type, 'Food')
+        self.assertEqual(second_saved_menu.name, 'GangSom')
+        self.assertEqual(second_saved_menu.type, 'Food')
+        self,assertEqual(thrid_saved_menu.name, 'KegHuay')
+        self.assertEqual(thrid_saved_menu.type, 'Drink')
+        self.assertEqual(fourth_saved_menu.name, 'NamOi')
+        self.assertEqual(fourth_saved_menu.type, 'Drink')
