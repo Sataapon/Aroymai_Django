@@ -1,5 +1,5 @@
 from django.test import TestCase
-from poll.models import Item
+from poll.models import Menu,Comment
 
 class HomePageTest(TestCase):
 
@@ -49,10 +49,10 @@ class AddPageTest(TestCase):
         thrid_saved_menu = saved_menus[2]
         fourth_saved_menu = saved_menus[3]
         self.assertEqual(first_saved_menu.name, 'GangCurry')
-        self.assertEuqal(first_saved_menu.type, 'Food')
+        self.assertEqual(first_saved_menu.type, 'Food')
         self.assertEqual(second_saved_menu.name, 'GangSom')
         self.assertEqual(second_saved_menu.type, 'Food')
-        self,assertEqual(thrid_saved_menu.name, 'KegHuay')
+        self.assertEqual(thrid_saved_menu.name, 'KegHuay')
         self.assertEqual(thrid_saved_menu.type, 'Drink')
         self.assertEqual(fourth_saved_menu.name, 'NamOi')
         self.assertEqual(fourth_saved_menu.type, 'Drink')
