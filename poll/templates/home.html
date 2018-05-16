@@ -1,27 +1,28 @@
 <html>
-    <head>
-        <title>Aroymai</title>
-    </head>
-    <body>
-        <h1>Aroymai</h1>
-        <form action="/fill" method="POST">
-            <table>
-                <tr>
-                    <th>Foods</th>
-                    <td><input type="checkbox" name="f_GangCurry" value="GangCurry" id="id_GangCurry">GangCurry</td>
-                    <td><input type="checkbox" name="f_Gangsom" value="GangSom" id="id_GangSom">GangSom<br></td>
-                </tr>
-                <tr>
-                    <th>Drinks</th>
-                    <td><input type="checkbox" name="d_KegHuay" value="KegHuay" id="id_KegHuay">KegHuay<br></td>
-                    <td><input type="checkbox" name="d_Namoi" value="NamOi" id="id_NamOi">NamOi<br></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Vote" id="id_Vote"></td>
-                </tr>
-            </table>
-            {% csrf_token %}
-        </form>
-    </body>
-</html>
-
+  <head>
+    <title>Aroymai Food Survey</title>
+  </head>
+  <body>
+    <h1>Aroymai Food Survey</h1>
+    <form action="/fill" method="GET">
+      <table>
+        <tr>
+          <th>Foods</th>
+          <td><input type="checkbox" name="F_Gangcurry" value="Gangcurry" id="id_Gangcurry">Gangcurry</td>
+          <td><input type="checkbox" name="F_Gangsom" value="Gangsom">Gangsom</td>
+        </tr>
+        <tr>
+          <th>Drinks</th>
+          <td><input type="checkbox" name="D_Keghuay" value="Keghuay" id="id_Keghuay">Keghuay</td>
+          <td><input type="checkbox" name="D_Namoi" value="Namoi">Namoi</td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Survey" id="id_Survey"></td>
+          <td><input type="submit" value="Review" formaction="/review"></td>
+        </tr>
+      </table>
+      {% csrf_token %}
+    </form>
+    <!-- <a href="about">About</a> -->
+  </body>
+<html>

@@ -1,36 +1,36 @@
 <html>
-    <head>
-        <title>Aroymai</title>
-    </head>
-    <body>
-        <h1>Aroymai</h1>
-        <form action="/add" method="POST">
-            <table>
-                <tr>
-                    <th>Foods</th>
-                    {% for food in foods %}
-                        <td>
-                            <center>{{ food }}</center>
-                            <textarea name={{ food }}_Comment rows="8" cols="30" id="id_{{ food }}_Comment"  placeholder="Enter comment"></textarea><br>
-                            Enter score: <input type="number" name={{ food }}_Score id="id_{{ food }}_Score"  min="1" max="5">
-                        </td>
-                    {% endfor %}
-                </tr>
-                <tr>
-                    <th>Drinks</th>
-                    {% for drink in drinks %}
-                        <td>
-                            <center>{{ drink }}</center>
-                            <textarea name={{ drink }}_Comment rows ="8" cols="30" id="id_{{ drink }}_Comment" placeholder="Enter comment"></textarea><br> 
-                            Enter score: <input type="number" name={{ drink }}_Score id="id_{{ drink }}_Score" min="1" max="5">                   
-                    {% endfor %}
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Send" id="id_Send"></td>
-                </tr>
-            </table>
-            {% csrf_token %}
-        </form>
-    </body>
+  <head>
+    <title>Aroymai Food Survey</title>
+  </head>
+  <body>
+    <h1>Aroymai</h1>
+    <form action="/confirm" method="POST">
+      <table>
+        <tr>
+          <th>Foods</th>
+          {% for key, value in foods.items %}
+          <td>
+            <center>{{ value }}</center>
+            <textarea name="{{ key }}_Comment" rows="8" cols="30" id="id_{{ key }}_Comment"  placeholder="Enter comment"></textarea><br>
+            Enter score: <input type="number" name="{{ key }}_Score" id="id_{{ key }}_Score"  min="1" max="5">
+          </td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <th>Drinks</th>
+          {% for key, value in drinks.items %}
+          <td>
+            <center>{{ value }}</center>
+            <textarea name="{{ key }}_Comment" rows ="8" cols="30" id="id_{{ key }}_Comment" placeholder="Enter comment"></textarea><br>
+            Enter score: <input type="number" name="{{ key }}_Score" id="id_{{ key }}_Score" min="1" max="5">
+          </td>
+          {% endfor %}
+        </tr>
+        <tr>
+          <td><input type="submit" value="Send" id="id_send"></td>
+        </tr>
+      </table>
+      {% csrf_token %}
+    </form>
+  </body>
 </html>
-
