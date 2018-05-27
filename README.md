@@ -1,19 +1,20 @@
-Aroymai
+# Aroymai web application
+  Project in Software Development Practice II class
 
-Project in Software Development Practice II class
+## Getting Started
+  Clone or download => https://github.com/sataapon48/Aroymai_Django.git <br />
+  Use command => python manage.py runserver <br />
+  Open browser => http://localhost:8000
 
-Create Foods-servey web application, using Django web framework and Test Driven Development process
+## Features
+  - Comment to any menu
+  - Vote to any menu
+  - View other people opinion
 
-Reference
+## Built With
+  Python https://www.python.org/ <br />
+  Django Framework https://www.djangoproject.com/
 
-https://docs.djangoproject.com/en/2.0/intro/ # Django tutorial
-
-https://www.obeythetestinggoat.com/pages/book.html#toc # Test Driven Development with Python 2nd Edition
-
-Feature
-
-• Comment to any menu
-
-• Vote to any menu
-
-• View other people opinion
+## Authors
+  Sataapon Naowat => https://sataapon1.blogspot.com/ <br />
+  Padungsak Ratchoo => http://bebesdp.blogspot.com/
