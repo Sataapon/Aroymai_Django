@@ -3,34 +3,40 @@
     <title>Aroymai Food Survey</title>
   </head>
   <body>
-    <h1>Aroymai</h1>
-    <form action="/confirm" method="POST">
-      <table>
+    <h1>Aroymai FillPage</h1>
+    <form action="/add" method="POST">
+      <table border="1">
         <tr>
           <th>Foods</th>
-          {% for key, value in foods.items %}
+          {% for food in foods %}
           <td>
-            <center>{{ value }}</center>
-            <textarea name="{{ key }}_Comment" rows="8" cols="30" id="id_{{ key }}_Comment"  placeholder="Enter comment"></textarea><br>
-            Enter score: <input type="number" name="{{ key }}_Score" id="id_{{ key }}_Score"  min="1" max="5">
+            <center>{{ food }}</center>
+            <textarea name="{{ food }}_comment" rows="8" cols="30" id="id_{{ food }}_Comment"  placeholder="Enter comment" required></textarea><br>
+            Enter score: <input type="number" name="{{ food }}_score" id="id_{{ food }}_Score"  min="1" max="5" required>
           </td>
           {% endfor %}
         </tr>
         <tr>
           <th>Drinks</th>
-          {% for key, value in drinks.items %}
+          {% for drink in drinks %}
           <td>
-            <center>{{ value }}</center>
-            <textarea name="{{ key }}_Comment" rows ="8" cols="30" id="id_{{ key }}_Comment" placeholder="Enter comment"></textarea><br>
-            Enter score: <input type="number" name="{{ key }}_Score" id="id_{{ key }}_Score" min="1" max="5">
+            <center>{{ drink }}</center>
+            <textarea name="{{ drink }}_comment" rows ="8" cols="30" id="id_{{ drink }}_Comment" placeholder="Enter comment" required></textarea><br>
+            Enter score: <input type="number" name="{{ drink }}_score" id="id_{{ drink }}_Score" min="1" max="5" required>
           </td>
           {% endfor %}
         </tr>
         <tr>
-          <td><input type="submit" value="Send" id="id_send"></td>
+          <td></td>
+          <td>
+            <br>
+            Name: <input type="text" name="User" size="5" id="id_User" maxlength="20">
+            <input type="submit" value="Send" id="id_Send">
+          </td>
         </tr>
       </table>
       {% csrf_token %}
     </form>
+    <a href="/">Home</a>
   </body>
 </html>

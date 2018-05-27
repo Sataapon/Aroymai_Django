@@ -1,7 +1,46 @@
 <html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
+  <head>
+    <title>Aroymai Food Survey</title>
+  </head>
+  <body>
+    <h1>Aroymai survey ReviewPage</h1>
+    <h2>latest five reviews from other users</h2>
+    <table border="1">
+      <tr>
+        <th rowspan="2">Foods</th>
+        {% for food in foods %}
+        <td width="400">
+          <center>{{ food }}</center>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+        {% for cmscs in foods_cmscs %}
+        <td>
+          {% for cmsc in cmscs %}
+            * Comment: {{ cmsc.comment }}, Score: {{ cmsc.score }}, User: {{ cmsc.user }} <br>
+          {% endfor %}
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <th rowspan="2">Drinks</th>
+        {% for drink in drinks %}
+        <td>
+          <center>{{ drink }}</center>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+        {% for cmscs in drinks_cmscs %}
+        <td>
+          {% for cmsc in cmscs %}
+            * Comment: {{ cmsc.comment }}, Score: {{ cmsc.score }}, User: {{ cmsc.user }} <br>
+          {% endfor %}
+        </td>
+        {% endfor %}
+      </tr>
+    </table>
+    <a href="/">Home</a>
+  </body>
 </html>

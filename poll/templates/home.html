@@ -3,26 +3,28 @@
     <title>Aroymai Food Survey</title>
   </head>
   <body>
-    <h1>Aroymai Food Survey</h1>
+    <h1>Aroymai Survey HomePage</h1>
     <form action="/fill" method="GET">
-      <table>
+      <table border="1">
         <tr>
           <th>Foods</th>
-          <td><input type="checkbox" name="F_Gangcurry" value="Gangcurry" id="id_Gangcurry">Gangcurry</td>
-          <td><input type="checkbox" name="F_Gangsom" value="Gangsom">Gangsom</td>
+          {% for food in foods %}
+          <td><input type="checkbox" name="{{ food.Type }}_{{ food.name }}" value="{{ food.name }}" id="id_{{ food.name }}">{{ food.name }}</td>
+          {% endfor %}
         </tr>
         <tr>
           <th>Drinks</th>
-          <td><input type="checkbox" name="D_Keghuay" value="Keghuay" id="id_Keghuay">Keghuay</td>
-          <td><input type="checkbox" name="D_Namoi" value="Namoi">Namoi</td>
+          {% for drink in drinks %}
+          <td><input type="checkbox" name="{{ drink.Type }}_{{ drink.name }}" value="{{ drink.name }}" id="id_{{ drink.name }}">{{ drink.name }}</td>
+          {% endfor %}
         </tr>
         <tr>
-          <td><input type="submit" value="Survey" id="id_Survey"></td>
-          <td><input type="submit" value="Review" formaction="/review"></td>
+          <td><input type="submit" value="Survey" id="id_Vote"></td>
+          <td><input type="submit" value="Review" id="id_Review" formaction="/review"></td>
         </tr>
       </table>
-      {% csrf_token %}
+
     </form>
-    <!-- <a href="about">About</a> -->
+    <a href="about">About</a>
   </body>
 <html>
