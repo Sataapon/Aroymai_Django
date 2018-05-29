@@ -3,13 +3,13 @@
     <title>Aroymai Food Survey</title>
   </head>
   <body>
-    <h1>Aroymai survey ReviewPage</h1>
-    <h2>latest five reviews from other users</h2>
+    <h1>Aroymai Survey ReviewPage</h1>
+    <h2>latest five opinion from other users</h2>
     <table border="1">
       <tr>
         <th rowspan="2">Foods</th>
         {% for food in foods %}
-        <td width="400">
+        <td>
           <center>{{ food }}</center>
         </td>
         {% endfor %}
